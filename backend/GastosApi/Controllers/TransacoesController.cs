@@ -128,12 +128,12 @@ public class TransacoesController : ControllerBase
                 p.Nome,
                 TotalReceitas = p.Transacoes
                     .Where(t => t.Tipo == Tipo.receitas)
-                    .Sum(t => t.Valor),
+                    .Sum(t => (decimal?)t.Valor) ?? 0m,
                 TotalDespesas = p.Transacoes
                     .Where(t => t.Tipo == Tipo.despesas)
-                    .Sum(t => t.Valor),
-                Saldo = p.Transacoes.Where(t => t.Tipo == Tipo.receitas).Sum(t => t.Valor)
-                      - p.Transacoes.Where(t => t.Tipo == Tipo.despesas).Sum(t => t.Valor)
+                    .Sum(t => (decimal?)t.Valor) ?? 0m,
+                Saldo = (p.Transacoes.Where(t => t.Tipo == Tipo.receitas).Sum(t => (decimal?)t.Valor) ?? 0m)
+                      - (p.Transacoes.Where(t => t.Tipo == Tipo.despesas).Sum(t => (decimal?)t.Valor) ?? 0m)
             })
             .ToListAsync();
 

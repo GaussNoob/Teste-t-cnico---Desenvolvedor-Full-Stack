@@ -412,3 +412,4 @@
 /home/gauss/fullstackproject/backend/GastosApi/obj/Debug/net10.0/GastosApi.pdb
 /home/gauss/fullstackproject/backend/GastosApi/obj/Debug/net10.0/GastosApi.genruntimeconfig.cache
 /home/gauss/fullstackproject/backend/GastosApi/obj/Debug/net10.0/ref/GastosApi.dll
+/home/gauss/fullstackproject/backend/GastosApi/obj/Debug/net10.0/GastosApi.sourcelink.json
